@@ -129,33 +129,14 @@ canvas.click(function(e) {
     // Check if click is inside a shape
     console.log("mouseX: "+mouseX+" mouseY: "+mouseY);
 
-    // for getting mouse position
-    /*
-    if (mouseX >= 0 && mouseX <= tileWidth && mouseY >= 0 && mouseY <= tileHeight) {
-        //console.log("mouseX: "+mouseX+" mouseY: "+mouseY);
-        // Open popup when shape is clicked
-        $('#popup_container').fadeIn();
-        $('.fight_scene').append('<p>click coordinates: (mouseX = '+mouseX+', mouseY = '+mouseY+')</p>');
-    }*/
-
     validGrid(mouseX , mouseY);
 });
 
-function validGrid(mouseX , mouseY){
-    /*validRow = (mouseY >= 0 && mouseY < tileHeight) || ((mouseY >= (numRows-1)*tileHeight) && (mouseY <= numRows*tileHeight));
-    validCol = (mouseX >= 0 && mouseX < tileWidth) || ((mouseX >= (numCols-1)*tileWidth) && (mouseX <= numCols*tileWidth));
-    if(validCol && validRow){
-        $('#popup_container').fadeIn();
-        $('.fight_scene').append('<p>click coordinates: (mouseX = '+mouseX+', mouseY = '+mouseY+')</p>');
-    }else{
-        console.log("invalid mouse position");
-    }*/
-
-    
+function validGrid(mouseX , mouseY){ 
     for(let i=0 ; i<tileList.length ; i++){
         validX = ((mouseX - tileList[i].getTileX) > 0) && ((mouseX - tileList[i].getTileX) < tileWidth);
         validY = ((mouseY - tileList[i].getTileY) > 0) && ((mouseY - tileList[i].getTileY) < tileHeight);
-        console.log(mouseY + " - " + tileList[i].getTileY + " = " + (mouseY - tileList[i].getTileY));
+        //console.log(mouseY + " - " + tileList[i].getTileY + " = " + (mouseY - tileList[i].getTileY));
         //console.log(tileList[i]);
         if(validX && validY){
             $('#popup_container').fadeIn();
