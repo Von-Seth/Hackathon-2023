@@ -155,7 +155,7 @@ function validGrid(mouseX , mouseY){
     for(let i=0 ; i<tileList.length ; i++){
         validX = ((mouseX - tileList[i].getTileX) > 0) && ((mouseX - tileList[i].getTileX) < tileWidth);
         validY = ((mouseY - tileList[i].getTileY) > 0) && ((mouseY - tileList[i].getTileY) < tileHeight);
-        console.log((mouseY - tileList[i].getTileY));
+        console.log(mouseY + " - " + tileList[i].getTileY + " = " + (mouseY - tileList[i].getTileY));
         //console.log(tileList[i]);
         if(validX && validY){
             $('#popup_container').fadeIn();

@@ -35,7 +35,7 @@ class Tile {
     }
 
     get getTileY(){
-        return this.x;
+        return this.y;
     }
 
     set setTileY(newY){
