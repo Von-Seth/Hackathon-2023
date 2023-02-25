@@ -46,9 +46,9 @@ let blueColor = "#0033cc";
 let greenColor = "#009900";
 let tileColor = [redColor, yellowColor, blueColor, greenColor];
 let tColorCounter = 0;
-function assignTileID(){
+function assignTileID() {
     // first row
-    for(var col = 0; col < numCols; col++){
+    for(var col = 0; col < numCols; col++) {
         let x = col*tileWidth;
         let y = 0;
         //draw tile
@@ -65,7 +65,7 @@ function assignTileID(){
     }
 
     //right col
-    for(let row=1 ; row<numRows-1 ; row++){
+    for(let row=1 ; row<numRows-1 ; row++) {
         let x = ((numCols-1)*tileWidth);
         let y = row*tileHeight;
         //draw tile
@@ -133,6 +133,9 @@ canvas.click(function(e) {
         $('.fight_scene').append('<p>click coordinates: (mouseX = '+mouseX+', mouseY = '+mouseY+')</p>');
     }
 });
+
+function bind(mouseX, mouseY) {
+}
 
 // Close popup when close button is clicked
 $('#popup_close_btn').click(function() {
