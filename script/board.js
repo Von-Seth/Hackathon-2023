@@ -139,7 +139,7 @@ function validGrid(mouseX , mouseY){
         //console.log(tileList[i]);
         if(validX && validY){
             $('#popup_fight_scene_container').fadeIn();
-            $('.fight_scene').append('<p>click coordinates: (mouseX = '+mouseX+', mouseY = '+mouseY+')</p>');
+            //$('.fight_scene').append('<p>click coordinates: (mouseX = '+mouseX+', mouseY = '+mouseY+')</p>');
         }
     }
 }

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Title Fighters</title>
     <link rel="stylesheet" href="style/index.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style/battlefield.css">
     <link rel="icon" href="favicon.ico">
 </head>
 <body>
@@ -30,13 +30,62 @@
     </div>
     <div id="popup_fight_scene_container">
         <div class="fight_scene">
-            <h2>popup fight scene page</h2>
-            <p>this is fight scene</p>
-            <button id="popup_close_btn">Fight finished!</button>
+            <div class="board">
+                <div class="player1">
+                    <button class="turn" type="button">Your Turn</button>
+                    <img src="images/knight.png" class="character-pic1">
+                    <p><span>Attack:0</span></p>
+                    <div class="value">
+                        <a href><img src="images/star.png">
+                            <div class="start-number">10</div>
+                        </a>
+                        <a href><img src="images/sword.png">
+                            <div class="sword-number">5</div>
+                        </a>
+                        <a href><img src="images/shield.png">
+                            <div class="shield-number">5</div>
+                        </a>
+                        <a href><img src="images/runner.png">
+                            <div class="evade-number">5</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="process">
+                    <p class=round><span>Round:1</span></p>
+                    <div class="control middle">
+                        <div class="dice middle">
+        
+                        </div>
+                    </div>
+                    <div class="center">
+                    </div>
+                </div>
+                <div class="player2">
+                    <button class="turn" type="button">Your Turn</button>
+                    <img src="images/hunter.png" class="character-pic2">
+                    <p><span>Attack:0</span></p>
+                    <div class="value">
+                        <a href><img src="images/star.png">
+                            <div class="start-number">10</div>
+                        </a>
+                        <a href><img src="images/sword.png">
+                            <div class="sword-number">5</div>
+                        </a>
+                        <a href><img src="images/shield.png">
+                            <div class="shield-number">5</div>
+                        </a>
+                        <a href><img src="images/runner.png">
+                            <div class="evade-number">5</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/6c9eb2e773.js" charset="UTF-8"></script>
+    <script src="battlefield.js" charset="UTF-8"></script>
     <script src="script/tile.js" charset="UTF-8"></script>
     <script src="script/board.js" charset="UTF-8"></script>
     <script src="script/index.js" charset="UTF-8"></script>
