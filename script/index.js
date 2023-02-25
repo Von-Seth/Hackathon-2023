@@ -12,6 +12,7 @@ for (let i = 0; i < characters.length; i++) {
 // choose character
 $(".btn").click(function(e) {
     console.log(e.target.id);
-    window.location.href = "board.html";
+    $('#popup_board_container').fadeIn();
+    // window.location.href = "board.html";
 });
 

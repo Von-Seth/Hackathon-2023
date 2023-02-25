@@ -15,7 +15,6 @@ function drawCanvas(canvas_width, canvas_height) {
 
 //draw all possible grid
 function drawBoard(tileWidth, tileHeight, numRows, numCols) {
-    
     for (var row = 0; row < numRows; row++) {
         for (var col = 0; col < numCols; col++) {
             // calculate the x and y coordinates of the tile
@@ -136,16 +135,16 @@ function validGrid(mouseX , mouseY){
     for(let i=0 ; i<tileList.length ; i++){
         validX = ((mouseX - tileList[i].getTileX) > 0) && ((mouseX - tileList[i].getTileX) < tileWidth);
         validY = ((mouseY - tileList[i].getTileY) > 0) && ((mouseY - tileList[i].getTileY) < tileHeight);
-        //console.log(mouseY + " - " + tileList[i].getTileY + " = " + (mouseY - tileList[i].getTileY));
+        console.log(mouseY + " - " + tileList[i].getTileY + " = " + (mouseY - tileList[i].getTileY));
         //console.log(tileList[i]);
         if(validX && validY){
-            $('#popup_container').fadeIn();
+            $('#popup_fight_scene_container').fadeIn();
             $('.fight_scene').append('<p>click coordinates: (mouseX = '+mouseX+', mouseY = '+mouseY+')</p>');
-        }        
+        }
     }
 }
 
 // Close popup when close button is clicked
 $('#popup_close_btn').click(function() {
-    $('#popup_container').fadeOut();
-  });
+    $('#popup_fight_scene_container').fadeOut();
+});
