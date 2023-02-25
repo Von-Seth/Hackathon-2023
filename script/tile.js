@@ -1,21 +1,30 @@
 class Tile {
-    constructor(tID, x , y, tileWidth, tileHeight) {
+    constructor (tID, x , y, tileWidth, tileHeight) {
         this.tID = tID;
         this.x = x;
         this.y = y;
         this.tileWidth = tileWidth;
         this.tileHeight = tileHeight;
     }
+    /*
+    constructor(tID , tPositionX , tPositionY , tColor , playerList , prevTile , nextTile){
+        this.tID = tID;
+        this.tPositionX = tPositionX;
+        this.tPositionY = tPositionY;
+        this.tColor = tColor;
+        this.playerList = playerList;
+        this.prevTile = prevTile;
+        this.nextTile = nextTile;
+    }*/
 
-    get tID() {
+    get tileID(){
         return this.tID;
     }
 
-    get position() {
-        return [this.x , this.y];
+    get tilePosition(){
+        return [this.tPositionX , this.tPositionY];
     }
-}
-    /*
+
     get tileColor() {
         return this.tColor;
     }
@@ -34,7 +43,7 @@ class Tile {
     get playerList(){
         return this.playerList;
     }
-        
+
     get prevTile(){
         return this.prevTile;
     }
@@ -61,6 +70,5 @@ class TileNode {
 }
 
 class TileLinkedList {
-    
+
 }
-*/
