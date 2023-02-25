@@ -11,9 +11,9 @@ function game() {
 
 function rollDice(num) {
     let bg = generateNum(1, 2)
-    dice.style.background = `url(../images/dice/s${bg}.jpg)`
+    dice.style.background = `url(images/dice/s${bg}.jpg)`
     setTimeout(function () {
-        dice.style.background = `url(../images/dice/${num}.jpg)`
+        dice.style.background = `url(images/dice/${num}.jpg)`
     }, 300)
 }
 
