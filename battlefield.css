@@ -33,27 +33,25 @@
   padding-top: 5px;
 }
 
-.process p span {
+.process span {
   font-size: 30px;
-  padding-top: 5px;
+  height: 300px;
   color: black;
 }
 
-
 .middle {
-	position: absolute;
-	top: 20%;
+  position: absolute;
+  top: 20%;
   left: 50%;
-	transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
-
 .dice {
-	width: 100px;
-	height: 100px;
-	background-image: url(images/1.jpg);
-	cursor: pointer;
-	border-radius: 25%;
+  width: 100px;
+  height: 100px;
+  background-image: url(images/1.jpg);
+  cursor: pointer;
+  border-radius: 25%;
 }
 .turn {
   height: 50px;
