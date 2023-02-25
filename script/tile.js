@@ -17,12 +17,29 @@ class Tile {
         this.nextTile = nextTile;
     }*/
 
+    
     get tileID(){
         return this.tID;
     }
 
-    get tilePosition(){
-        return [this.tPositionX , this.tPositionY];
+    set tileID(newTID){
+        this.tID = newTID;
+    }
+
+    get getTileX(){
+        return this.x;
+    }
+
+    set setTileX(newX){
+        this.x = newX;
+    }
+
+    get getTileY(){
+        return this.x;
+    }
+
+    set setTileY(newY){
+        this.y = newY;
     }
 
     get tileColor() {
@@ -33,42 +50,5 @@ class Tile {
         this.tColor = newColor;
     }
 
-    containPlayer(){
-        let result = false;
-        if(this.playerList != null){
-            result = true;
-        }
-    }
-
-    get playerList(){
-        return this.playerList;
-    }
-
-    get prevTile(){
-        return this.prevTile;
-    }
-
-    set prevTile(toSetPTile){
-        this.prevTile = toSetPTile;
-    }
-
-    get nextTile(){
-        return this.nextTile;
-    }
-
-    set nextTile(toSetNTile){
-        this.nextTile = toSetNTile;
-    }
-}
-
-class TileNode {
-    constructor(tileID, prev, next){
-        this.tileID = tileID;
-        this.prev = prev;
-        this.next = next;
-    }
-}
-
-class TileLinkedList {
 
 }

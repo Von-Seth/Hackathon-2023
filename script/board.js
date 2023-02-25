@@ -120,21 +120,47 @@ drawBoard(tileWidth, tileHeight, numRows, numCols);// tileWidth, tileHeight, num
 assignTileID();
 console.log(tileList);
 
+let mouseX;
+let mouseY;
 canvas.click(function(e) {
-    // Get x and y coordinates of click
-    var mouseX = e.clientX - canvas[0].offsetLeft;
-    var mouseY = e.clientY - canvas[0].offsetTop;
+    // Get x and y coordinates of mouse click
+    mouseX = e.clientX - canvas[0].offsetLeft;
+    mouseY = e.clientY - canvas[0].offsetTop;
     // Check if click is inside a shape
     console.log("mouseX: "+mouseX+" mouseY: "+mouseY);
+
+    // for getting mouse position
+    /*
     if (mouseX >= 0 && mouseX <= tileWidth && mouseY >= 0 && mouseY <= tileHeight) {
         //console.log("mouseX: "+mouseX+" mouseY: "+mouseY);
         // Open popup when shape is clicked
         $('#popup_container').fadeIn();
         $('.fight_scene').append('<p>click coordinates: (mouseX = '+mouseX+', mouseY = '+mouseY+')</p>');
-    }
+    }*/
+
+    validGrid(mouseX , mouseY);
 });
 
-function bind(mouseX, mouseY) {
+function validGrid(mouseX , mouseY){
+    /*validRow = (mouseY >= 0 && mouseY < tileHeight) || ((mouseY >= (numRows-1)*tileHeight) && (mouseY <= numRows*tileHeight));
+    validCol = (mouseX >= 0 && mouseX < tileWidth) || ((mouseX >= (numCols-1)*tileWidth) && (mouseX <= numCols*tileWidth));
+    if(validCol && validRow){
+        $('#popup_container').fadeIn();
+        $('.fight_scene').append('<p>click coordinates: (mouseX = '+mouseX+', mouseY = '+mouseY+')</p>');
+    }else{
+        console.log("invalid mouse position");
+    }*/
+
+    
+    for(let i=0 ; i<tileList.length ; i++){
+        validX = mouseX >= 0 && (mouseX - tileList[i].getTileX < tileWidth);
+        validY = mouseY >= 0 && (mouseY - tileList[i].getTileY < tileHeight);
+        //console.log(tileList[i].getTileX + " : " + tileList[i].getTileY);
+        if(validX && validY){
+            $('#popup_container').fadeIn();
+            $('.fight_scene').append('<p>click coordinates: (mouseX = '+mouseX+', mouseY = '+mouseY+')</p>');
+        }        
+    }
 }
 
 // Close popup when close button is clicked
