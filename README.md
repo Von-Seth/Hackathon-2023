@@ -8,5 +8,6 @@
 # Citations and Sources
 - W3Schools
 - www.favicon.cc
-- www.flaticon.com
-- https://github.com/HumanSean/javascript-monopoly
+- www.flaticon.com (some icons)
+- https://github.com/HumanSean/javascript-monopoly (dice icons)
+- https://www.tukuppt.com/soback/xiangsu8288.html (background)
