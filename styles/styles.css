@@ -1,24 +1,74 @@
-.gamecontainer-div {
-    display: block;
-    margin: 1%;
-    aspect-ratio: 16/9;
-    background-color: cornflowerblue; /*Temp colour*/
+.board {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
 }
 
-.players-div {
-    display: inline-block;
-    float: left;
-    margin: 1%;
-    width: 18%;
-    height: 96%;
-    background-color:blue /*Temp colour*/
+.player1,
+.process,
+.player2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  flex-basis: 33.33%;
 }
 
-.gameboard-div {
-    display: inline-block;
-    float: right;
-    margin: 1%;
-    width: 78%;
-    aspect-ratio: 2/1;
-    background-color: aquamarine; /*Temp colour*/
+.dice {
+  margin: 5px 0;
+  height: 70px;
+}
+
+.turn {
+  height: 50px;
+}
+
+.round {
+  height: 50px;
+}
+
+.attack {
+  margin: 0 15px;
+  height: 50px;
+}
+
+.value a {
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  color: var(--color-black);
+  line-height: 40px;
+  border-radius: 50%;
+  margin: 0 15px;
+  font-size: 18px;
+  transition: 0.3s linear;
+}
+
+.value a:hover {
+  columns: #b8e994;
+  background-color: transparent;
+  transform: scale(1.5);
+}
+
+.sword-number {
+  display: inline-block;
+  margin-block: 1px;
+  color: #b30000;
+  margin-inline: 5px;
+}
+
+.shield-number {
+  display: inline-block;
+  margin-block: 1px;
+  color: #0040ff;
+  margin-inline: 5px;
+}
+
+.evade-number {
+  display: inline-block;
+  margin-block: 1px;
+  color: #00cc00;
+  margin-inline: 5px;
 }

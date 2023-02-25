@@ -1,18 +1,59 @@
 <!DOCTYPE html>
-    <html>
-        <head>
-            <link rel="icon" href="favicon.ico">
-            <link rel="stylesheet" href="styles.css">
-            <title>Title Fighters</title>
-        </head>
-    <body>
-        <div class="gamecontainer-div">
-            <div class="players-div">
-                <p>This is a placeholder</p>
-            </div>
-            <div class="gameboard-div">
-                <canvas></canvas>
+<html>
+
+<head>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <title>Fight Window</title>
+</head>
+
+<body>
+    <div class="board">
+        <div class="player1">
+            <button class="turn" type="button">Your Turn</button>
+            <img src="images/knight.png" class="character-pic1">
+            <div class="value">
+                <a href><img src="images/star.png">
+                    <div class="start-number">10</div>
+                </a>
+                <a href><img src="images/sword.png">
+                    <div class="sword-number">5</div>
+                </a>
+                <a href><img src="images/shield.png">
+                    <div class="shield-number">5</div>
+                </a>
+                <a href><img src="images/runner.png">
+                    <div class="evade-number">5</div>
+                </a>
             </div>
         </div>
-    </body>
+        <div class="process">
+            <button class="round" type="button">Round 1</button>
+            <img src="images/dice.png" class="dice">
+            <div class="center"> <button class="attack" type="button">Attack : 10</button>
+                <button class="attack" type="button">Attack : 10</button></div>
+        </div>
+        <div class="player2">
+            <button class="turn" type="button">Your Turn</button>
+            <img src="images/hunter.png" class="character-pic2">
+            <div class="value">
+                <a href><img src="images/star.png">
+                    <div class="start-number">10</div>
+                </a>
+                <a href><img src="images/sword.png">
+                    <div class="sword-number">5</div>
+                </a>
+                <a href><img src="images/shield.png">
+                    <div class="shield-number">5</div>
+                </a>
+                <a href><img src="images/runner.png">
+                    <div class="evade-number">5</div>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://kit.fontawesome.com/6c9eb2e773.js" crossorigin="anonymous"></script>
+
 </html>
