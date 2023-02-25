@@ -9,3 +9,4 @@
 - W3Schools
 - www.favicon.cc
 - www.flaticon.com
+- https://github.com/HumanSean/javascript-monopoly
