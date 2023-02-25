@@ -14,7 +14,7 @@ var playerPosY = 0;
 function drawCanvas(canvas_width, canvas_height) {
     canvas.attr('width', canvas_width);
     canvas.attr('height', canvas_height);
-    playerImage.src = 'images/knight.png';
+    playerImage.src = 'images/knight.gif';
 }
 
 //draw all possible grid
@@ -153,6 +153,12 @@ function validGrid(mouseX , mouseY){
         }        
     }
 }
+
+function rollPlayerMovementDice(){
+    let result = Math.floor(Math.random() * 6) + 1; // get random number from 1 - 6
+    return result;
+}
+
 
 // Close popup when close button is clicked
 $('#popup_close_btn').click(function() {
