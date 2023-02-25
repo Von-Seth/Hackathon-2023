@@ -7,15 +7,18 @@ var tileWidth = 100;
 var tileHeight = 100;
 var numRows = 5;
 var numCols = 10;
+var playerImage = new Image();
+var playerPosX = 0;
+var playerPosY = 0;
 
 function drawCanvas(canvas_width, canvas_height) {
     canvas.attr('width', canvas_width);
     canvas.attr('height', canvas_height);
+    playerImage.src = 'images/knight.png';
 }
 
 //draw all possible grid
 function drawBoard(tileWidth, tileHeight, numRows, numCols) {
-    
     for (var row = 0; row < numRows; row++) {
         for (var col = 0; col < numCols; col++) {
             // calculate the x and y coordinates of the tile
@@ -47,6 +50,7 @@ let greenColor = "#009900";
 let tileColor = [redColor, yellowColor, blueColor, greenColor];
 let tColorCounter = 0;
 function assignTileID() {
+    tColorCounter = 0;
     // first row
     for(var col = 0; col < numCols; col++) {
         let x = col*tileWidth;
@@ -119,6 +123,8 @@ drawCanvas(1000, 500);// canvas_width, canvas_height
 drawBoard(tileWidth, tileHeight, numRows, numCols);// tileWidth, tileHeight, numRows, numCols
 assignTileID();
 console.log(tileList);
+ 
+
 
 let mouseX;
 let mouseY;
@@ -128,8 +134,11 @@ canvas.click(function(e) {
     mouseY = e.clientY - canvas[0].offsetTop;
     // Check if click is inside a shape
     console.log("mouseX: "+mouseX+" mouseY: "+mouseY);
-
     validGrid(mouseX , mouseY);
+    drawCanvas(1000, 500);// canvas_width, canvas_height
+    drawBoard(tileWidth, tileHeight, numRows, numCols);// tileWidth, tileHeight, numRows, numCols
+    assignTileID();
+    ctx.drawImage(playerImage, playerPosX, playerPosY);
 });
 
 function validGrid(mouseX , mouseY){ 
