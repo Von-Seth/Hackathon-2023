@@ -47,6 +47,16 @@ function updateDamageCalculation(player , damage){
     player.hp -= damage;
 }
 
+function playerFight(player1 , player2){
+    //player 1 attack first
+    p1Atk = player1.atk + rollDice();
+
+    // player 2 attack 
+    p2Atk = player2.atk + rollDice();
+
+    
+}
+
 
 //testing stuff
 let c = new Player(5 , 1 , -1 , -1 , 10 , 0);

@@ -148,8 +148,10 @@ function validGrid(mouseX , mouseY){
         //console.log(mouseY + " - " + tileList[i].getTileY + " = " + (mouseY - tileList[i].getTileY));
         //console.log(tileList[i]);
         if(validX && validY){
-            $('#popup_container').fadeIn();
-            $('.fight_scene').append('<p>click coordinates: (mouseX = '+mouseX+', mouseY = '+mouseY+')</p>');
+            playerPosX = tileList[i].x;
+            playerPosY = tileList[i].y;
+            //$('#popup_container').fadeIn();
+            //$('.fight_scene').append('<p>click coordinates: (mouseX = '+mouseX+', mouseY = '+mouseY+')</p>');
         }        
     }
 }
