@@ -167,5 +167,5 @@ function rollPlayerMovementDice(){
 
 // Close popup when close button is clicked
 $('#popup_close_btn').click(function() {
-    $('#popup_container').fadeOut();
+    $('#popup_fight_scene_container').fadeOut();
   });
