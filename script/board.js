@@ -121,9 +121,35 @@ function assignTileID() {
         tileList.push(tile);
     }
 }
+
+let rollDicePosX = (1.7 * tileWidth);
+let rolldDcePosY = (1.5 * tileHeight);
+let rollDiceWidth = 180;
+let rollDiceHeight = 80;
+let rollResult = '-'
+function drawDice(){
+    //draw dice button
+    ctx.beginPath();
+    ctx.rect( rollDicePosX, rolldDcePosY , rollDiceWidth , rollDiceHeight);
+    ctx.fillStyle = "black";
+    ctx.fill();
+
+    //draw dice roll text
+    ctx.font = "30px Arial";
+    ctx.fillStyle = "white"
+    ctx.fillText("Roll Dice ", (2*tileWidth), (2*tileHeight));
+
+    //draw :
+    ctx.font = "50px Arial";
+    ctx.fillStyle = "black"
+    ctx.fillText(":  " + rollResult, (3.7*tileWidth), (2*tileHeight));
+}
+
+
 drawCanvas(1000, 500);// canvas_width, canvas_height
 drawBoard(tileWidth, tileHeight, numRows, numCols);// tileWidth, tileHeight, numRows, numCols
 assignTileID();
+drawDice();
 //console.log(tileList);
  
 let playposiation = 0;
@@ -140,6 +166,9 @@ canvas.click(function(e) {
     drawCanvas(1000, 500);// canvas_width, canvas_height
     drawBoard(tileWidth, tileHeight, numRows, numCols);// tileWidth, tileHeight, numRows, numCols
     assignTileID();
+    drawDice();
+    rollResult = rollPlayerMovementDice();
+
     ctx.drawImage(playerImage, playerPosX, playerPosY);
 });
 
@@ -157,6 +186,17 @@ function validGrid(mouseX , mouseY){
             //$('.fight_scene').append('<p>click coordinates: (mouseX = '+mouseX+', mouseY = '+mouseY+')</p>');
         }        
     }
+}
+
+function validDiceGrid(mouseX , mouseY){ 
+    for(let i=0 ; i<tileList.length ; i++){
+        validX = ((mouseX - tileList[i].x) > 0) && ((mouseX - tileList[i].x) < tileWidth);
+        validY = ((mouseY - tileList[i].y) > 0) && ((mouseY - tileList[i].y) < tileHeight);
+        if(validX && validY){
+            playerPosX = tileList[i].x;
+            playerPosY = tileList[i].y;
+        }
+    }//...not finished yet
 }
 
 function rollPlayerMovementDice(){
