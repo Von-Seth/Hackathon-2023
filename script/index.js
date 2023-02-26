@@ -10,7 +10,7 @@ for (let i = 0; i < characters.length; i++) {
 }
 
 // choose character
-$(".btn").click(function(e) {
+$("img").click(function(e) {
     console.log(e.target.id);
     $('#popup_board_container').fadeIn();
     // window.location.href = "board.html";
