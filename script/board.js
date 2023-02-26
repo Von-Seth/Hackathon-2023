@@ -7,10 +7,16 @@ var tileWidth = 100;
 var tileHeight = 100;
 var numRows = 5;
 var numCols = 10;
+var playerImage = new Image();
+var playerPosX = 0;
+var playerPosY = 0;
+
+let ifRecord = false;
 
 function drawCanvas(canvas_width, canvas_height) {
     canvas.attr('width', canvas_width);
     canvas.attr('height', canvas_height);
+    playerImage.src = 'images/knight.gif';
 }
 
 //draw all possible grid
@@ -46,6 +52,7 @@ let greenColor = "#009900";
 let tileColor = [redColor, yellowColor, blueColor, greenColor];
 let tColorCounter = 0;
 function assignTileID() {
+    tColorCounter = 0;
     // first row
     for(var col = 0; col < numCols; col++) {
         let x = col*tileWidth;
@@ -59,7 +66,7 @@ function assignTileID() {
             if(tColorCounter == tileColor.length){
                 tColorCounter = 0;
             }    
-        tile = new Tile(tID++, x, y, tileWidth, tileHeight);
+        tile = new Tile(tID++, x, y, tileWidth, tileHeight, tColorCounter);
         tileList.push(tile);
     }
 
@@ -76,7 +83,7 @@ function assignTileID() {
             if(tColorCounter == tileColor.length){
                 tColorCounter = 0;
             }    
-        tile = new Tile(tID++, x, y, tileWidth, tileHeight);
+        tile = new Tile(tID++, x, y, tileWidth, tileHeight, tColorCounter);
         tileList.push(tile);
     }
 
@@ -93,7 +100,8 @@ function assignTileID() {
             if(tColorCounter == tileColor.length){
                 tColorCounter = 0;
             }    
-        tile = new Tile(tID++, x, y, tileWidth, tileHeight);
+        tile = new Tile(tID++, x, y, tileWidth, tileHeight, tColorCounter);
+        tileList.push(tile);
         tileList.push(tile);
     }
 
@@ -110,14 +118,17 @@ function assignTileID() {
             if(tColorCounter == tileColor.length){
                 tColorCounter = 0;
             }    
-        tile = new Tile(tID++, x, y, tileWidth, tileHeight);
+        tile = new Tile(tID++, x, y, tileWidth, tileHeight, tColorCounter);
+        tileList.push(tile);
         tileList.push(tile);
     }
 }
 drawCanvas(1000, 500);// canvas_width, canvas_height
 drawBoard(tileWidth, tileHeight, numRows, numCols);// tileWidth, tileHeight, numRows, numCols
 assignTileID();
-console.log(tileList);
+//console.log(tileList);
+ 
+let playposiation = 0;
 
 let mouseX;
 let mouseY;
@@ -127,24 +138,34 @@ canvas.click(function(e) {
     mouseY = e.clientY - canvas[0].offsetTop;
     // Check if click is inside a shape
     console.log("mouseX: "+mouseX+" mouseY: "+mouseY);
-
     validGrid(mouseX , mouseY);
+    drawCanvas(1000, 500);// canvas_width, canvas_height
+    drawBoard(tileWidth, tileHeight, numRows, numCols);// tileWidth, tileHeight, numRows, numCols
+    assignTileID();
+    ctx.drawImage(playerImage, playerPosX, playerPosY);
 });
 
 function validGrid(mouseX , mouseY){ 
     for(let i=0 ; i<tileList.length ; i++){
-        validX = ((mouseX - tileList[i].getTileX) > 0) && ((mouseX - tileList[i].getTileX) < tileWidth);
-        validY = ((mouseY - tileList[i].getTileY) > 0) && ((mouseY - tileList[i].getTileY) < tileHeight);
-        console.log(mouseY + " - " + tileList[i].getTileY + " = " + (mouseY - tileList[i].getTileY));
-        //console.log(tileList[i]);
+        validX = ((mouseX - tileList[i].x) > 0) && ((mouseX - tileList[i].x) < tileWidth);
+        validY = ((mouseY - tileList[i].y) > 0) && ((mouseY - tileList[i].y) < tileHeight);
         if(validX && validY){
-            $('#popup_fight_scene_container').fadeIn();
+            console.log(tileList[i]);
+            playerPosX = tileList[i].x;
+            playerPosY = tileList[i].y;
+            //$('#popup_container').fadeIn();
             //$('.fight_scene').append('<p>click coordinates: (mouseX = '+mouseX+', mouseY = '+mouseY+')</p>');
-        }
+        }        
     }
 }
 
+function rollPlayerMovementDice(){
+    let result = Math.floor(Math.random() * 6) + 1; // get random number from 1 - 6
+    return result;
+}
+
+
 // Close popup when close button is clicked
 $('#popup_close_btn').click(function() {
-    $('#popup_fight_scene_container').fadeOut();
-});
+    $('#popup_container').fadeOut();
+  });
