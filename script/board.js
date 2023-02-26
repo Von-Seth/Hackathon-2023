@@ -62,11 +62,11 @@ function assignTileID() {
         ctx.rect( x , y , tileWidth , tileHeight);
         ctx.fillStyle = tileColor[tColorCounter];
         ctx.fill();
+        tile = new Tile(tID++, x, y, tileWidth, tileHeight, tileColor[tColorCounter]);
         tColorCounter++;
             if(tColorCounter == tileColor.length){
                 tColorCounter = 0;
             }    
-        tile = new Tile(tID++, x, y, tileWidth, tileHeight, tColorCounter);
         tileList.push(tile);
     }
 
@@ -79,11 +79,11 @@ function assignTileID() {
         ctx.rect( x , y , tileWidth , tileHeight);
         ctx.fillStyle = tileColor[tColorCounter];
         ctx.fill();
+        tile = new Tile(tID++, x, y, tileWidth, tileHeight, tileColor[tColorCounter]);
         tColorCounter++;
             if(tColorCounter == tileColor.length){
                 tColorCounter = 0;
             }    
-        tile = new Tile(tID++, x, y, tileWidth, tileHeight, tColorCounter);
         tileList.push(tile);
     }
 
@@ -96,12 +96,11 @@ function assignTileID() {
         ctx.rect( x , y , tileWidth , tileHeight);
         ctx.fillStyle = tileColor[tColorCounter];
         ctx.fill();
+        tile = new Tile(tID++, x, y, tileWidth, tileHeight, tileColor[tColorCounter]);
         tColorCounter++;
             if(tColorCounter == tileColor.length){
                 tColorCounter = 0;
             }    
-        tile = new Tile(tID++, x, y, tileWidth, tileHeight, tColorCounter);
-        tileList.push(tile);
         tileList.push(tile);
     }
 
@@ -114,12 +113,11 @@ function assignTileID() {
         ctx.rect( x , y , tileWidth , tileHeight);
         ctx.fillStyle = tileColor[tColorCounter];
         ctx.fill();
+        tile = new Tile(tID++, x, y, tileWidth, tileHeight, tileColor[tColorCounter]);
         tColorCounter++;
-            if(tColorCounter == tileColor.length){
-                tColorCounter = 0;
-            }    
-        tile = new Tile(tID++, x, y, tileWidth, tileHeight, tColorCounter);
-        tileList.push(tile);
+        if(tColorCounter == tileColor.length){
+               tColorCounter = 0;
+        }    
         tileList.push(tile);
     }
 }
@@ -150,10 +148,12 @@ function validGrid(mouseX , mouseY){
         validX = ((mouseX - tileList[i].x) > 0) && ((mouseX - tileList[i].x) < tileWidth);
         validY = ((mouseY - tileList[i].y) > 0) && ((mouseY - tileList[i].y) < tileHeight);
         if(validX && validY){
-            console.log(tileList[i]);
             playerPosX = tileList[i].x;
             playerPosY = tileList[i].y;
-            //$('#popup_container').fadeIn();
+            //console.log(tileColor[1]);
+            if (tileList[i].color == tileColor[0]) {
+                $('#popup_fight_scene_container').fadeIn();
+            }
             //$('.fight_scene').append('<p>click coordinates: (mouseX = '+mouseX+', mouseY = '+mouseY+')</p>');
         }        
     }
