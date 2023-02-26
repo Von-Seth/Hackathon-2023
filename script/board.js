@@ -151,7 +151,7 @@ assignTileID();
 drawDice();
 //ctx.drawImage(playerImage, 0, 0);
 //console.log(tileList);
- 
+
 
 
 let mouseX;
