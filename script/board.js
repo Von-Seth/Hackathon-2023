@@ -16,7 +16,8 @@ let ifRecord = false;
 function drawCanvas(canvas_width, canvas_height) {
     canvas.attr('width', canvas_width);
     canvas.attr('height', canvas_height);
-    playerImage.src = 'images/knight.gif';
+    console.log(selected_character);
+    playerImage.src = 'images/'+selected_character+'.gif';
 }
 
 //draw all possible grid

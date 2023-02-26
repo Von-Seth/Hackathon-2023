@@ -9,9 +9,11 @@ for (let i = 0; i < characters.length; i++) {
     });
 }
 
+var selected_character;
 // choose character
 $("img").click(function(e) {
     console.log(e.target.id);
+    selected_character = e.target.id;
     $('#popup_board_container').fadeIn();
     // window.location.href = "board.html";
 });
